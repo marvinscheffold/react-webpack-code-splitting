@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import * as routes from "../../utils/routes";
-import FooPage from "./foo/foo-page";
-import BarPage from "./bar/bar-page";
-import NotFoundPage from "./not-found/not-found-page";
+const FooPage = lazy(() => import("./foo/foo-page"));
+const BarPage = lazy(() => import("./bar/bar-page"));
+const NotFoundPage = lazy(() => import("./not-found/not-found-page"));
 
 
 
@@ -14,6 +14,7 @@ export default class Router extends React.Component {
     render() {
         return (
             <BrowserRouter>
+                <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
                         <Route
                             path={`${routes.FOO}`}
@@ -25,6 +26,7 @@ export default class Router extends React.Component {
                         />
                         <Route path="*" component={NotFoundPage} />
                     </Switch>
+                </Suspense>
             </BrowserRouter>
         );
     }

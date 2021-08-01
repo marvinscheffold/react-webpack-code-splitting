@@ -4,7 +4,7 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "es2020",
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
@@ -12,6 +12,7 @@
     "typeRoots": [
       "./node_modules/@types",
       "./typings.d.ts"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true
   }
 }
