@@ -13,6 +13,7 @@ export default class FooPage extends React.Component<Props, any>{
             <div>
                 <Link to={BAR}>Go to Bar</Link>
                 <h1>Foo Page</h1>
+                <p>lorem ipsum</p>
             </div>
         );
     }
