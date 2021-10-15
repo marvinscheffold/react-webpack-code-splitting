@@ -6,7 +6,7 @@
 import * as React from "react";
 import Router from "./routes/router";
 
-export default class App extends React.Component<any, any> {
+export default class App extends React.Component {
     constructor(props: any) {
         super(props);
     }
